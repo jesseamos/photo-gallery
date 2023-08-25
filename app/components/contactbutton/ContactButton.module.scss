@@ -1,0 +1,15 @@
+.contact_button {
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+
+  &:hover {
+    background-color: #fff;
+    color: #007bff;
+    transform: scale(1.05);
+  }
+}

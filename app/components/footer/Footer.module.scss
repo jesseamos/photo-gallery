@@ -1,0 +1,56 @@
+/* components/Footer.module.scss */
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.socialLinks {
+  display: flex;
+}
+
+.socialLink {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.socialLink:hover {
+  color: #007bff;
+}
+/* components/Footer.module.scss */
+
+/* ... Existing styles ... */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .socialLinks {
+    margin-top: 10px;
+  }
+
+  .socialLink {
+    font-size: 1.2rem;
+  }
+}

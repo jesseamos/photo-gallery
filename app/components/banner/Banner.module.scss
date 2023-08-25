@@ -1,0 +1,11 @@
+/* components/Banner.module.scss */
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 100vh; // Adjust the height as needed
+  filter: grayscale(100%); // Apply black and white effect
+  display: flex;
+  align-items: center; /* Center vertically */
+  flex-direction: column;
+}
