@@ -16,31 +16,34 @@ const Navbar: React.FC = () => {
         </Link>
       </div>
       <ul className={styles.app__navbar_links}>
-        {["about", "artwork", "allu-model", "nft", "contact"].map((item) => (
-          <li
-            className={`${styles.app__flex} ${styles.p_text}`}
-            key={`link-${item}`}
-          >
-            <div />
-            <a href={`/${item}`}>{item}</a>
-          </li>
-        ))}
+        {toggle
+          ? null
+          : // Only render the links if the toggle is false
+            ["about", "artwork", "allu-model", "nft", "contact"].map((item) => (
+              <li
+                className={`${styles.app__flex} ${styles.p_text}`}
+                key={`link-${item}`}
+              >
+                <div />
+                <a href={`/${item}`}>{item}</a>
+              </li>
+            ))}
       </ul>
 
       <div className={styles.app__navbar_menu}>
-        <div className={styles.burger_icon} onClick={() => setToggle(true)}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+        <div
+          className={`${styles.burger_icon} ${toggle ? "open" : ""}`}
+          onClick={() => setToggle(!toggle)}
+        >
+          {toggle ? <HiX /> : <HiMenuAlt4 />}
         </div>
-        <button onClick={() => setToggle(true)}>OPEN</button>
         {toggle && (
           <motion.div
             initial={{ x: 300 }}
             animate={{ x: 0 }}
             transition={{ duration: 0.85, ease: "easeOut" }}
+            className={styles.menu_content}
           >
-            <span onClick={() => setToggle(false)}>X</span>
             <ul>
               {["about", "artwork", "allu-model", "nft", "contact"].map(
                 (item) => (
